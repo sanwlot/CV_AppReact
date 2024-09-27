@@ -20,10 +20,10 @@ export default function CV({ cv }) {
               <LocalPhoneIcon /> <span>{cv.personalInfo.phone}</span>
             </p>
             <p>
-              <LocationOnIcon /> <span>Jodhpur, Rajasthan</span>
+              <LocationOnIcon /> <span>{cv.personalInfo.address}</span>
             </p>
             <p>
-              <LinkedInIcon /> <a href="#">LinkedIn</a>
+              <LinkedInIcon /> <a href={cv.personalInfo.linkedIn}>LinkedIn</a>
             </p>
           </div>
         </div>

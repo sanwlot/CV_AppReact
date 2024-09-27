@@ -4,13 +4,15 @@ import Form from "./components/Form/Form"
 import CV from "./components/CV/CV"
 import { useEffect } from "react"
 
-function App() {
+export default function App() {
   const [cv, setCV] = useState(
     JSON.parse(localStorage.getItem("CV")) || {
       personalInfo: {
         name: "Your Name",
         email: "example@gmail.com",
         phone: "1234567890",
+        address: "Jaipur",
+        linkedIn: "",
       },
       educationInfo: {
         titleOfStudy: "Course Name",
@@ -38,7 +40,6 @@ function App() {
     }
   )
   useEffect(() => {
-    console.log("effect ran")
     localStorage.setItem("CV", JSON.stringify(cv))
   }, [cv])
   function addSkills(skill) {
@@ -71,7 +72,6 @@ function App() {
   function handleAddExpBtn(exp) {
     setCV({ ...cv, expInfo: [...cv.expInfo, exp] })
   }
-  console.log(cv)
   return (
     <div className="appContainer container">
       <h1 style={{ textAlign: "center" }}>CV APP</h1> <hr />
@@ -87,5 +87,3 @@ function App() {
     </div>
   )
 }
-
-export default App

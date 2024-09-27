@@ -2,6 +2,8 @@ export default function PersonalInfo({
   name,
   email,
   phone,
+  address,
+  linkedIn,
   handleChangePersonalInfo,
 }) {
   return (
@@ -37,6 +39,28 @@ export default function PersonalInfo({
           id="phone"
           name="phone"
           value={phone}
+          onChange={handleChangePersonalInfo}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="address">Address </label>
+        <input
+          className="form-control"
+          type="text"
+          id="address"
+          name="address"
+          value={address}
+          onChange={handleChangePersonalInfo}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="linkedIn">LinkedIn </label>
+        <input
+          className="form-control"
+          type="text"
+          id="linkedIn"
+          name="linkedIn"
+          value={linkedIn}
           onChange={handleChangePersonalInfo}
         />
       </div>
