@@ -2,7 +2,6 @@ import { useState } from "react"
 import "./App.css"
 import Form from "./components/Form/Form"
 import CV from "./components/CV/CV"
-import { useEffect } from "react"
 
 function App() {
   const [cv, setCV] = useState({
@@ -33,12 +32,7 @@ function App() {
       },
     ],
   })
-  useEffect(() => {
-    const btns = document.querySelectorAll("button")
-    btns.forEach((btn) => {
-      btn.classList.add("btn")
-    })
-  }, [])
+
   function handleChangePersonalInfo(e) {
     const { name, value } = e.target
     setCV({
@@ -64,7 +58,7 @@ function App() {
   }
   return (
     <div className="appContainer container">
-      <h1>CV APP</h1> <hr />
+      <h1 style={{ textAlign: "center" }}>CV APP</h1> <hr />
       <Form
         cv={cv}
         handleChangeEducationInfo={handleChangeEducationInfo}

@@ -20,7 +20,6 @@ export default function Form({
         />
         <ExpInfo handleAddExpBtn={handleAddExpBtn} />
       </div>
-      <button type="submit">Submit</button>
     </form>
   )
 }
