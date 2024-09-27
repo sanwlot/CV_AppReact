@@ -41,21 +41,17 @@ export default function CV({ cv }) {
         <div className="skillsDetails">
           <h2>SKILLS</h2>
           <ul>
-            <li>JavaScrpt</li>
-            <li>HTML/CSS/BOOTSTRAP</li>
-            <li>ReactJS</li>
-            <li>Fireabase</li>
-            <li>Node/ExpressJs</li>
+            {cv.skillsInfo.map((skill, i) => (
+              <li key={i}>{skill}</li>
+            ))}
           </ul>
         </div>
         <div className="langDetails">
           <h2>LANGUAGES</h2>
           <ul>
-            <li>English</li>
-            <li>French</li>
-            <li>Hindi</li>
-            <li>Spanish</li>
-            <li>Italian</li>
+            {cv.languagesInfo.map((language, i) => (
+              <li key={i}>{language}</li>
+            ))}
           </ul>
         </div>
       </section>

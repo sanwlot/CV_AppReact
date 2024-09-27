@@ -15,6 +15,8 @@ function App() {
       dateOfStudy: "2020",
       instituteName: "University/Institute Name",
     },
+    skillsInfo: [],
+    languagesInfo: [],
 
     expInfo: [
       {
@@ -32,6 +34,12 @@ function App() {
       },
     ],
   })
+  function addSkills(skill) {
+    setCV({ ...cv, skillsInfo: [...cv.skillsInfo, skill] })
+  }
+  function addLanguages(language) {
+    setCV({ ...cv, languagesInfo: [...cv.languagesInfo, language] })
+  }
 
   function handleChangePersonalInfo(e) {
     const { name, value } = e.target
@@ -56,6 +64,7 @@ function App() {
   function handleAddExpBtn(exp) {
     setCV({ ...cv, expInfo: [...cv.expInfo, exp] })
   }
+  console.log(cv)
   return (
     <div className="appContainer container">
       <h1 style={{ textAlign: "center" }}>CV APP</h1> <hr />
@@ -64,6 +73,8 @@ function App() {
         handleChangeEducationInfo={handleChangeEducationInfo}
         handleChangePersonalInfo={handleChangePersonalInfo}
         handleAddExpBtn={handleAddExpBtn}
+        addLanguages={addLanguages}
+        addSkills={addSkills}
       />
       <CV cv={cv} />
     </div>
