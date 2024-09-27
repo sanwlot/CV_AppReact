@@ -2,38 +2,45 @@ import { useState } from "react"
 import "./App.css"
 import Form from "./components/Form/Form"
 import CV from "./components/CV/CV"
+import { useEffect } from "react"
 
 function App() {
-  const [cv, setCV] = useState({
-    personalInfo: {
-      name: "Your Name",
-      email: "example@gmail.com",
-      phone: "1234567890",
-    },
-    educationInfo: {
-      titleOfStudy: "Course Name",
-      dateOfStudy: "2020",
-      instituteName: "University/Institute Name",
-    },
-    skillsInfo: [],
-    languagesInfo: [],
-
-    expInfo: [
-      {
-        companyName: "Company Name",
-        positionTitle: "Job Title",
-        responsibilites: [
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
-        ],
-        dateFrom: "2020",
-        dateUntil: "2022",
+  const [cv, setCV] = useState(
+    JSON.parse(localStorage.getItem("CV")) || {
+      personalInfo: {
+        name: "Your Name",
+        email: "example@gmail.com",
+        phone: "1234567890",
       },
-    ],
-  })
+      educationInfo: {
+        titleOfStudy: "Course Name",
+        dateOfStudy: "2020",
+        instituteName: "University/Institute Name",
+      },
+      skillsInfo: [],
+      languagesInfo: [],
+
+      expInfo: [
+        {
+          companyName: "Company Name",
+          positionTitle: "Job Title",
+          responsibilites: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla unde, sit maxime quaerat facere magnam voluptatum.",
+          ],
+          dateFrom: "2020",
+          dateUntil: "2022",
+        },
+      ],
+    }
+  )
+  useEffect(() => {
+    console.log("effect ran")
+    localStorage.setItem("CV", JSON.stringify(cv))
+  }, [cv])
   function addSkills(skill) {
     setCV({ ...cv, skillsInfo: [...cv.skillsInfo, skill] })
   }
