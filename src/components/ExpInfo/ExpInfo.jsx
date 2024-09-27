@@ -27,31 +27,32 @@ export default function ExpInfo({ handleAddExpBtn }) {
   return (
     <section className="expInfo">
       <h2>Professional Experience</h2>
-      <div>
+      <div className="form-group">
         <label htmlFor="companyName">Company Name </label>
         <input
+          className="form-control"
           type="text"
           id="companyName"
           name="companyName"
           value={exp.companyName}
           onChange={handleChange}
         />
-        <button type="button">Edit</button>
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="positionTitle">Position Titile </label>
         <input
+          className="form-control"
           type="text"
           id="positionTitle"
           name="positionTitle"
           value={exp.positionTitle}
           onChange={handleChange}
         />
-        <button type="button">Edit</button>
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="responsibilites">Responsibilites </label>
         <input
+          className="form-control"
           type="text"
           id="responsibilites"
           name="responsibilites"
@@ -64,27 +65,27 @@ export default function ExpInfo({ handleAddExpBtn }) {
           Add
         </button>
         <button type="button">Clear</button>
-        <div>
+        <div className="form-group">
           <label htmlFor="dateFrom">Date from </label>
           <input
+            className="form-control"
             type="date"
             id="dateFrom"
             name="dateFrom"
             value={exp.dateFrom}
             onChange={handleChange}
           />
-          <button type="button">Edit</button>
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="dateUntil">Date Until </label>
           <input
+            className="form-control"
             type="date"
             id="dateUntil"
             name="dateUntil"
             value={exp.dateUntil}
             onChange={handleChange}
           />
-          <button type="button">Edit</button>
         </div>
         <button type="button" onClick={() => handleAddExpBtn(exp)}>
           Add Work Experience

@@ -106,3 +106,9 @@ main .leftPanel .personalDetails p {
 .langDetails ul {
   margin-left: 1em;
 }
+
+form section {
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 2em;
+}
